@@ -7,6 +7,7 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const jobsRouter = require('./routes/jobs');
 
+const eventEmitter = require('./listeners')
 const app = express();
 
 // view engine setup
@@ -21,6 +22,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/jobs', jobsRouter);
+
+eventEmitter.registerListeners()
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
