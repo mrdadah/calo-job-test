@@ -7,6 +7,14 @@ Project is created with:
 * [ExpressJs](https://expressjs.com/)
 * [Local File Database](https://github.com/Belphemur/node-json-db)
 
+## Application structure
+- **app.js**: entry point for the application
+- **db**: contains database config and initialization
+- **routers**: contains jobs routes for create and get APIs
+- **api**: business logic modules, like jobs module that contains createJob and getJob logic
+- **listeners**: contains initialise event emitter object, register listeners and listeners implementation
+- **public/images**: contains jobs result images
+
 ## Setup & run locally
 To run this project, please follow the next steps:
 ```
